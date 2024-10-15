@@ -1,0 +1,55 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btnModal {
+  color: white; /* رنگ متن سفید */
+  text-align: center; /* متن در وسط چین */
+  font-family: "Yekan Bakh FaNum", sans-serif; /* استفاده از فونت Yekan Bakh FaNum */
+  font-size: 16px; /* اندازه متن 16 پیکسل */
+  font-weight: 600; /* وزن متن نیمه‌پررنگ */
+  line-height: 20px; /* فاصله بین خطوط 20 پیکسل */
+  display: block; /* عنصر به صورت بلاک نمایش داده شود */
+  width: 100%; /* عرض 100% */
+}
+
+.modal,
+.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.modalOverlay {
+  background: rgba(59, 59, 59, 0.65);
+}
+.modalContent {
+  max-width: 600px;
+  min-width: 300px;
+  padding: 14px 28px;
+  line-height: 1.4;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: flex;
+  width: 430px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 70px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+

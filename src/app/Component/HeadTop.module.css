@@ -1,0 +1,20 @@
+.bg-custom-gradient {
+  background: linear-gradient(180deg, #19b16a 0%, #00934c 100%);
+}
+
+.bggradientcustom {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 12px;
+  background: linear-gradient(
+    268deg,
+    rgba(25, 177, 106, 0.1) 0%,
+    rgba(43, 140, 81, 0.1) 100%
+  );
+  margin-top:16px;
+}

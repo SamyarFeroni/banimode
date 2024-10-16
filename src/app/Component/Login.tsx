@@ -14,7 +14,7 @@ function DownLog() {
 
   return (
     <div>
-         <div className="flex w-[420px]  p-[24px] flex-col justify-center items-end  rounded-[20px] bg-white shadow-[0px_3px_16px_0px_rgba(0,_0,_0,_0.10)] mt-[-65px] ml-[540px] relative">
+         <div className="flex w-[420px]  p-[24px] flex-col justify-center items-end  rounded-[20px] bg-white shadow-[0px_3px_16px_0px_rgba(0,_0,_0,_0.10)] mt-[200px] ml-[400px] relative">
 
             <div className="flex justify-between items-center self-stretch">
             <div className="text-[#53565A] text-center font-[Yekan_Bakh_FaNum] text-[14px] font-semibold leading-[20px] flex cursor-pointer"><Image src={imageEdit} alt="Image" width={20} height={20} />تغییر شماره</div>

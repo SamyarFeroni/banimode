@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <HeadTop/>
-        <DownLog/>
         <HeadDown/>
         {children}
       </body>

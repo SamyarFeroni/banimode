@@ -2,8 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import HeadTop from "./Component/HeadTop";
 import HeadDown from "./Component/HeadDown";
-import DownLog from "./Component/Login";
-import { AppProvider } from "./Component/ModalContext";
+
+import BeforLogin from "./Component/BeforLogin";
 
 export default function RootLayout({
   children,
@@ -14,6 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <HeadTop />
+        <BeforLogin/>
         <HeadDown />
         {children}
       </body>

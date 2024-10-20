@@ -3,14 +3,14 @@ body.active-modal {
 }
 
 .btnModal {
-  color: white; /* رنگ متن سفید */
-  text-align: center; /* متن در وسط چین */
-  font-family: "Yekan Bakh FaNum", sans-serif; /* استفاده از فونت Yekan Bakh FaNum */
-  font-size: 16px; /* اندازه متن 16 پیکسل */
-  font-weight: 600; /* وزن متن نیمه‌پررنگ */
-  line-height: 20px; /* فاصله بین خطوط 20 پیکسل */
-  display: block; /* عنصر به صورت بلاک نمایش داده شود */
-  width: 100%; /* عرض 100% */
+  color: white;
+  text-align: center;
+  font-family: "Yekan Bakh FaNum", sans-serif; 
+  font-size: 16px; 
+  font-weight: 600; 
+  line-height: 20px; 
+  display: block; 
+  width: 100%; 
 }
 
 .modal,

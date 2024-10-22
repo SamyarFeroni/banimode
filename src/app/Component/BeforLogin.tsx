@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Styles from "./modal.module.css";
 import Image from "next/image";
 import image3 from "../public/image/Ellipse 1 (1).svg";
-import image4 from "../public/image/cross-small, crossed small, delete, remove.png";
+import image4 from "../public/image/cross-small, crossed small, delete, remove.svg";
 import imageQ from "../public/image/circle-questionmark, faq, help, questionaire.svg";
 import imageFlashUp from "../public/image/chevron-up-small copy.svg";
 import imageEdit from "../public/image/edit-3.svg";
@@ -12,6 +12,9 @@ import imageFlasher from "../public/image/Arrow, Down 1 copy.svg";
 import imageFlashDown from "../public/image/chevron-down-small.svg";
 import bgCustom from "./HeadTop.module.css";
 import imageCheckLogin from "../public/image/bubble-check, comment, feedback.svg";
+import imageXLogin from "../public/image/bubble-crossed, comment, feedback.svg";
+import imageQ2 from "../public/image/bubble-question, comment, feedback.svg";
+import imageAlert from "../public/image/alert-circle.svg"
 
 function BeforLogin() {
   const [modal, setModal] = useState(false); 
@@ -22,22 +25,27 @@ function BeforLogin() {
   const [timeLeft, setTimeLeft] = useState(60);
   const [inputFocused, setInputFocused] = useState<boolean>(false); 
   const [textColor, setTextColor] = useState<string>("#828282"); 
-
   const [showNewComponent, setShowNewComponent] = useState(false); 
-
   const [AccordionOpen, setAccordionOpen] = useState(false);
   const [AccordionOpen2, setAccordionOpen2] = useState(false);
   const [AccordionOpen3, setAccordionOpen3] = useState(false);
+  const [showNewComponent2,setShowNewComponent2] = useState(false);
+  const [ModalPay, setModalPay] = useState(false)
+
 
 
   const handleClick = () => {
     setShowNewComponent(true);
   };
-
+  const handleClick2 = () => {
+    setShowNewComponent2(true);
+  };
+  const handleClick3 = () => {
+    setModalPay(true);
+  };
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setPhoneNumber(value);
-
     if (value.length === 11 && /^\d+$/.test(value)) {
       setIsValid(true); 
       setErrorMessage("");
@@ -50,12 +58,11 @@ function BeforLogin() {
   const handleFocus = () => {
     setInputFocused(true);
   };
-
   const handleBlur = () => {
     setInputFocused(false); 
   };
-
   const toggleModal = () => {
+    setModalPay(false)
     setModal(!modal);
     setPhoneNumber("");
     setIsValid(false);
@@ -66,7 +73,6 @@ function BeforLogin() {
       setTextColor("#828282");
     }
   };
-
   const toggleConfirmationModal = () => {
     setConfirmationModal(false); 
   };
@@ -307,6 +313,8 @@ function BeforLogin() {
               اعتبار تارا دارم؟
             </div>
 
+
+          {!showNewComponent2&&(
             <div className={bgCustom.bggradientcustom}>
               <div
                 className="flex text-[#101010] text-right font-[Yekan_Bakh_FaNum] text-[14px] font-normal leading-[20px] "
@@ -322,7 +330,7 @@ function BeforLogin() {
                 تبریک! شما اعتبار تارا دارید و می‌توانید از بانی‌مد توسط درگاه
                 تارا خرید کنید.
               </div>
-              <div className="flex p-[12px_4px_12px_0] justify-center items-center gap-[6px] self-stretch rounded-[12px] border-2 border-[rgba(255,255,255,0.40)] bg-gradient-to-r from-[#19B16A] to-[#2B8C51] cursor-pointer">
+              <div className="flex p-[12px_4px_12px_0] justify-center items-center gap-[6px] self-stretch rounded-[12px] border-2 border-[rgba(255,255,255,0.40)] bg-gradient-to-r from-[#19B16A] to-[#2B8C51] cursor-pointer" onClick={handleClick2}>
                 <Image src={imageFlasher} alt="Image" width={24} height={24} />{" "}
                 <a
                   className="text-white text-center font-YekanBakhFaNum text-[16px] font-semibold leading-[20px]"
@@ -332,13 +340,126 @@ function BeforLogin() {
                 </a>
               </div>
             </div>
+          )}
+          {showNewComponent2&&(
+            <div className="flex flex-col items-end p-4 gap-4 self-stretch rounded-xl border border-gray-200 mt-[20px]">
+            <div
+              className="flex text-[#101010] text-right font-[Yekan_Bakh_FaNum] text-[14px] font-normal leading-[20px] "
+              dir="rtl"
+            >
+              <Image
+                className="mt-[-19px] ml-[10px] relative"
+                src={imageXLogin}
+                alt="Image"
+                width={20}
+                height={20}
+              />{" "}
+             در حال حاظر شما اعتبار خرید از بانی مد را ندارید. برای دریافت اعتبار روی لینک زیر کنید.
+            </div>
+            <div className="flex p-[12px_4px_12px_0] justify-center items-center gap-[6px] self-stretch rounded-[12px] border-2 border-[rgba(255,255,255,0.40)] bg-gradient-to-r from-[#19B16A] to-[#2B8C51] cursor-pointer" onClick={handleClick3}>
+              <Image src={imageFlasher} alt="Image" width={24} height={24} />{" "}
+              <button
+                className="text-white text-center font-YekanBakhFaNum text-[16px] font-semibold leading-[20px]"
+                dir="rtl"
+              >
+               گرفتن اعتبار تارا
+              </button>
+            </div>
           </div>
+          )}
+          </div>
+          {showNewComponent2&&(
+                    <div className="flex flex-col justify-center items-end gap-4 self-stretch p-4 pt-6 pb-6 rounded-2xl bg-white shadow-[0px_2px_16px_rgba(0,_0,_0,_0.06)] w-[800px] ml-[339px] mt-[40px]">
+                    <div className="flex justify-center items-center gap-2" dir="rtl"><Image src={imageQ2} alt="Image" width={24} height={24} /><span className="text-center text-[16px] font-semibold leading-[22px] text-[#101010]">چگونه اعتبار می‌گیرم؟</span></div>
+                    <div className="self-stretch text-right text-[14px] font-normal leading-[20px] text-[#53565A]" dir="rtl">با درگاه تارا از بانی مد نقدی خرید کنید و برای خرید بعدیتون تا سقف <span className="font-bold"> 15میلیون تومان</span>، اعتبار بگیرید.</div>
+                    <div className="self-stretch text-[#53565A] text-right font-[Yekan Bakh FaNum] text-[14px] font-normal leading-[20px] mt-[-10px]" dir="rtl">در جدول زیر می‌تونید ببینید با هر مبلغ خرید، چقدر اعتبار بهتون تعلق می‌گیره. </div>
+
+                    <div className="border border-gray-200 rounded-lg w-full">
+                    <div className="flex flex-col">
+                      <div className="flex justify-between p-3 border-b border-gray-200" >
+                      <div className="flex-1 text-center">مبلغ اعتبار تخصیصی</div>
+                        <div className="flex-1 text-center">مبلغ خرید از بانی مد</div>                      
+                      </div>
+                      <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                      <div className="flex-1 text-center" dir="rtl">تعلق نمی‌گیرد.</div>
+                        <div className="flex-1 text-center">تا 2 میلیون</div>                     
+                      </div>
+                      <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                      <div className="flex-1 text-center">2 میلیون</div>
+                        <div className="flex-1 text-center">بیش از 2 میلیون</div>
+                      </div>
+                      <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                      <div className="flex-1 text-center">5 میلیون</div>
+                        <div className="flex-1 text-center">بیش از 5 میلیون</div>
+                      </div>
+                      <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                      <div className="flex-1 text-center">10 میلیون</div>
+                        <div className="flex-1 text-center">بیش از 10 میلیون</div>                       
+                      </div>
+                      <div className="flex justify-between p-3 bg-gray-200 bg-opacity-60 ">
+                      <div className="flex-1 text-center">15 میلیون</div>
+                        <div className="flex-1 text-center">بیش از 15 میلیون</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                  <div className="flex flex-col items-end gap-1 p-3 border border-gray-200 rounded-lg self-stretch">
+                    <div className="flex justify-end items-start gap-1" dir="rtl"> <Image src={imageAlert} alt="Image" width={20} height={20} /> <span className="text-[#19B16A] text-right font-YekanBakhFaNum text-sm font-semibold leading-5">توجه</span> </div>
+                    <div className="text-[#888] text-right font-YekanBakhFaNum text-sm font-normal leading-5"> همه مبالغ نوشته شده به تومان می‌باشند. برای دریافت اعتبارتون، <span className="text-[#888] font-YekanBakhFaNum text-sm font-semibold leading-5">اپلیکیشن تارا </span> رو نصب کنید.</div>
+                  </div>
+                  </div>  
+
+
+                  
+
+
+
+
+
+
+          )}
+
+          {ModalPay && (
+            <div
+              className={Styles.modal}
+              style={{ backgroundColor: "rgba(59, 59, 59, 0.65)"}}
+            >
+              <div className={Styles.overlay} onClick={toggleModal} style={{height:"100px"}}></div>
+              <div className={Styles.modalContent}>
+                <div className="flex items-center justify-between">
+                  <div className="mr-[250px] cursor-pointer flex relative" onClick={toggleModal}>
+                    <Image src={image4} alt="Close" width={24} height={24} />
+                  </div>
+                  <div className="self-stretch text-[#0C0C0C] text-right text-[16px] font-semibold leading-[20px] ">
+                  مراحل استفاده از اعتبار تارا
+                  </div>
+                </div>
+              
+               
+
+                
+                
+              </div>
+            </div>
+          )}
+          
+
+
+
+
 
           <div className="flex w-[800px] p-[16px_24px] flex-col justify-center items-end gap-[16px] rounded-[20px] bg-white shadow-[0px_2px_16px_rgba(0,_0,_0,_0.06)] mt-11 relative ml-[340px]">
             <div className="text-[#101010] text-center font-[Yekan_Bakh_FaNum] text-[16px] font-semibold leading-[22px] flex">
               سوالات متداول
               <Image src={imageQ} alt="Image" width={20} height={20} />
             </div>
+
+
 
 
 
@@ -489,7 +610,7 @@ function BeforLogin() {
                 </div>
               </div>
             </button>
-
+<div></div>
 
           </div>
         </div>

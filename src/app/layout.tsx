@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import HeadTop from "./Component/HeadTop";
 import HeadDown from "./Component/HeadDown";
-
 import BeforLogin from "./Component/BeforLogin";
 
 export default function RootLayout({

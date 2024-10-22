@@ -1,6 +1,3 @@
-body.active-modal {
-  overflow-y: hidden;
-}
 
 .btnModal {
   color: white;
@@ -22,6 +19,7 @@ body.active-modal {
   right: 0;
   bottom: 0;
   position: fixed;
+  
 }
 
 .modalOverlay {
@@ -44,6 +42,7 @@ body.active-modal {
   gap: 70px;
   border-radius: 16px;
   background: #fff;
+  
 }
 
 .close-button {

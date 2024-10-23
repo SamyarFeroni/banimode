@@ -4,4 +4,17 @@
 
 
 
-
+/* @layer base {
+    body {
+    
+      font-family: "Yekan", sans-serif;
+    }
+  }
+  
+  @font-face {
+    font-family: Yekan;
+    font-style: normal;
+    font-weight: 100;
+    src: url("./public/fonts/YekanBakhFaNum-Thin.woff") format("woff"),
+         url("./public/fonts/YekanBakhFaNum-Thin.woff") format("woff2");
+  } */

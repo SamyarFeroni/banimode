@@ -1,6 +1,6 @@
 "use client"; // Add this line to make this a Client Component
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef } from "react";
 import Styles from "./modal.module.css";
 import Image from "next/image";
 import image3 from "../public/image/Ellipse 1 (1).svg";
@@ -18,7 +18,7 @@ import imageAlert from "../public/image/alert-circle.svg";
 import imagePay from "../public/image/image 2.png";
 import imageOcheckG from "../public/image/Ellipse 55.svg";
 import imageOcheckG2 from "../public/image/Ellipse 58 (1).svg";
-import { useRef } from "react";
+
 
 function BeforLogin() {
   const [modal, setModal] = useState(false);
@@ -35,7 +35,11 @@ function BeforLogin() {
   const [AccordionOpen3, setAccordionOpen3] = useState(false);
   const [showNewComponent2, setShowNewComponent2] = useState(false);
   const [ModalPay, setModalPay] = useState(false);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>(Array(5).fill(null));
 
+
+
+  // HandClick for Buttons
   const handleClick = () => {
     setShowNewComponent(true);
   };
@@ -45,6 +49,8 @@ function BeforLogin() {
   const handleClick3 = () => {
     setModalPay(true);
   };
+
+  //For input number user can only input 11 PhoneNumber
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setPhoneNumber(value);
@@ -57,8 +63,8 @@ function BeforLogin() {
     }
   };
 
-  const inputRefs = useRef<(HTMLInputElement | null)[]>(Array(5).fill(null));
-
+ 
+//Function for OTP
   const handleChangeOTP = (
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -76,19 +82,24 @@ function BeforLogin() {
     }
   };
 
+
+//Focus for input box for PhoneNumber
   const handleFocus = () => {
     setInputFocused(true);
   };
+  //Blur for input box for PhoneNumber
   const handleBlur = () => {
     setInputFocused(false);
   };
+
+  //For all Modals sttings
   const toggleModal = () => {
     setModalPay(false);
     setModal(!modal);
     setPhoneNumber("");
     setIsValid(false);
     setErrorMessage("");
-
+      //Timer for Send Code from backend
     if (!modal) {
       setTimeLeft(60);
       setTextColor("#828282");
@@ -97,7 +108,7 @@ function BeforLogin() {
   const toggleConfirmationModal = () => {
     setConfirmationModal(false);
   };
-
+//Set timer when modal is open
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
@@ -117,12 +128,14 @@ function BeforLogin() {
     return () => clearInterval(interval);
   }, [modal, confirmationModal]);
 
+  //Format Timer  minutes: seconds =>>> 00:59
   const formatTimeLeft = () => {
     const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
     const seconds = String(timeLeft % 60).padStart(2, "0");
     return `${minutes}:${seconds}`;
   };
 
+//If your Phone number is True close the first Modal and opne the sec Modal
   const handleGetConfirmationCode = () => {
     if (isValid) {
       setModal(false);
@@ -130,6 +143,7 @@ function BeforLogin() {
     }
   };
 
+//When the timer is zero restart the timer
   const handleResendCode = () => {
     setTimeLeft(60);
     setTextColor("#828282");

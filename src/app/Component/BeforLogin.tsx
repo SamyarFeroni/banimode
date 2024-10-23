@@ -1,4 +1,4 @@
-"use client"; // Add this line to make this a Client Component
+"use client"; // Client Component
 
 import React, { useEffect, useState ,useRef } from "react";
 import Styles from "./modal.module.css";

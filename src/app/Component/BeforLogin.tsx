@@ -16,7 +16,7 @@ import imageXLogin from "../public/image/bubble-crossed, comment, feedback.svg";
 import imageQ2 from "../public/image/bubble-question, comment, feedback.svg";
 import imageAlert from "../public/image/alert-circle.svg";
 import imagePay from "../public/image/image 2.png";
-import iamgePay2 from "../public/image/imagePay2.png"
+import iamgePay2 from "../public/image/imagePay2.png";
 import imageOcheckG from "../public/image/Ellipse 55.svg";
 import imageOcheckG2 from "../public/image/Ellipse 58 (1).svg";
 import imageCheckMark from "../public/image/checkmark-1.svg";
@@ -485,24 +485,21 @@ function BeforLogin() {
               </div>
 
               <div className="flex items-end gap-1 p-3 border border-gray-200 rounded-lg self-stretch">
-                <div className="text-[#888] text-right font-YekanBakhFaNum text-sm font-normal leading-5 ml-[184px]" dir="rtl">
+                <div
+                  className="text-[#888] text-right font-YekanBakhFaNum text-sm font-normal leading-5 ml-[184px]"
+                  dir="rtl"
+                >
                   {" "}
                   همه مبالغ نوشته شده به تومان می‌باشند. برای دریافت اعتبارتون،{" "}
                   <span className="text-[#888] font-YekanBakhFaNum text-sm font-semibold leading-5">
                     اپلیکیشن تارا{" "}
                   </span>{" "}
                   رو نصب کنید.
-                </div>
-                {" "}
-                  <span className="text-[#19B16A] text-right font-YekanBakhFaNum text-sm font-semibold leading-5 flex">
-                    توجه
-                  </span>{" "}
-                  <Image
-                    src={imageAlert}
-                    alt="Image"
-                    width={20}
-                    height={20}
-                  />
+                </div>{" "}
+                <span className="text-[#19B16A] text-right font-YekanBakhFaNum text-sm font-semibold leading-5 flex">
+                  توجه
+                </span>{" "}
+                <Image src={imageAlert} alt="Image" width={20} height={20} />
               </div>
             </div>
           )}
@@ -543,7 +540,7 @@ function BeforLogin() {
 
                 <div className="  flex  ">
                   {!ModalPay2 && (
-                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">  
+                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">
                       {" "}
                       <Image
                         src={imagePay}
@@ -920,5 +917,4 @@ function BeforLogin() {
     </div>
   );
 }
-
 export default BeforLogin;

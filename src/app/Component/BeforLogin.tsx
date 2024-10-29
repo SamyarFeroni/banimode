@@ -16,8 +16,11 @@ import imageXLogin from "../public/image/bubble-crossed, comment, feedback.svg";
 import imageQ2 from "../public/image/bubble-question, comment, feedback.svg";
 import imageAlert from "../public/image/alert-circle.svg";
 import imagePay from "../public/image/image 2.png";
+import iamgePay2 from "../public/image/imagePay2.png"
 import imageOcheckG from "../public/image/Ellipse 55.svg";
 import imageOcheckG2 from "../public/image/Ellipse 58 (1).svg";
+import imageCheckMark from "../public/image/checkmark-1.svg";
+import imageFlashBack from "../public/image/flashBack.svg";
 
 function BeforLogin() {
   const [modal, setModal] = useState(false);
@@ -34,6 +37,7 @@ function BeforLogin() {
   const [AccordionOpen3, setAccordionOpen3] = useState(false);
   const [showNewComponent2, setShowNewComponent2] = useState(false);
   const [ModalPay, setModalPay] = useState(false);
+  const [ModalPay2, setModalPay2] = useState(false);
   const inputRefs = useRef<(HTMLInputElement | null)[]>(Array(5).fill(null));
 
   // HandClick for Buttons
@@ -46,7 +50,13 @@ function BeforLogin() {
   const handleClick3 = () => {
     setModalPay(true);
   };
+  const handleClick4 = () => {
+    setModalPay2(true);
+  };
 
+  const handleClick5 = () => {
+    setModalPay2(false);
+  };
   //For input number user can only input 11 PhoneNumber
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -145,7 +155,7 @@ function BeforLogin() {
   };
 
   return (
-    <div className=" re">
+    <div className="">
       {!showNewComponent && (
         <div className="flex w-[420px] p-[24px] flex-col justify-center items-end gap-[24px] rounded-[20px] bg-white shadow-[0px_3px_16px_0px_rgba(0,_0,_0,_0.10)] -mt-[66px] ml-[539px] relative">
           <div className="text-[#101010] text-center font-['Yekan_Bakh_FaNum'] text-[16px] font-semibold leading-[20px] ">
@@ -474,20 +484,8 @@ function BeforLogin() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-end gap-1 p-3 border border-gray-200 rounded-lg self-stretch">
-                <div className="flex justify-end items-start gap-1" dir="rtl">
-                  {" "}
-                  <Image
-                    src={imageAlert}
-                    alt="Image"
-                    width={20}
-                    height={20}
-                  />{" "}
-                  <span className="text-[#19B16A] text-right font-YekanBakhFaNum text-sm font-semibold leading-5">
-                    توجه
-                  </span>{" "}
-                </div>
-                <div className="text-[#888] text-right font-YekanBakhFaNum text-sm font-normal leading-5">
+              <div className="flex items-end gap-1 p-3 border border-gray-200 rounded-lg self-stretch">
+                <div className="text-[#888] text-right font-YekanBakhFaNum text-sm font-normal leading-5 ml-[184px]" dir="rtl">
                   {" "}
                   همه مبالغ نوشته شده به تومان می‌باشند. برای دریافت اعتبارتون،{" "}
                   <span className="text-[#888] font-YekanBakhFaNum text-sm font-semibold leading-5">
@@ -495,6 +493,16 @@ function BeforLogin() {
                   </span>{" "}
                   رو نصب کنید.
                 </div>
+                {" "}
+                  <span className="text-[#19B16A] text-right font-YekanBakhFaNum text-sm font-semibold leading-5 flex">
+                    توجه
+                  </span>{" "}
+                  <Image
+                    src={imageAlert}
+                    alt="Image"
+                    width={20}
+                    height={20}
+                  />
               </div>
             </div>
           )}
@@ -509,7 +517,10 @@ function BeforLogin() {
                 onClick={toggleModal}
                 style={{ height: "100px" }}
               ></div>
-              <div className={Styles.modalContent}>
+              <div
+                className={Styles.modalContent}
+                style={{ width: "572px", height: "585px" }}
+              >
                 <div className="flex justify-between items-center w-full p-4">
                   <div className="flex-1 ml-[-30px] mt-[-30px]">
                     <Image
@@ -530,80 +541,219 @@ function BeforLogin() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2   flex  ">
-                  <div className="p-4  w-[200px] ml-[-10px] mt-[-70px]">
-                    {" "}
-                    <Image
-                      src={imagePay}
-                      alt="Image"
-                      width={260}
-                      height={480}
-                    />
-                  </div>
-                  <div className="p-4  w-[200px] mt-[-70px]">
-                    <div className="flex justify-between items-center self-stretch">
-                      <div>
-                        {" "}
-                        <Image
-                          src={imageOcheckG2}
-                          alt="Image"
-                          width={40}
-                          height={40}
-                        />{" "}
-                        <span className="absolute right-[10px] top-[2px] text-white text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[72px] mr-[29.5px]">
-                          1
-                        </span>
-                      </div>
-                      <div
-                        className="w-[89px] h-[3px]"
-                        style={{ background: "#EDEDED" }}
-                      ></div>
-                      <div>
-                        {" "}
-                        <Image
-                          src={imageOcheckG2}
-                          alt="Image"
-                          width={40}
-                          height={40}
-                        />{" "}
-                        <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[72px] mr-[174px]">
-                          3
-                        </span>
-                      </div>
-                      <div
-                        className="w-[89px] h-[3px]"
-                        style={{
-                          background:
-                            "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
-                        }}
-                      ></div>
-                      <div>
-                        {" "}
-                        <Image
-                          src={imageOcheckG}
-                          alt="Image"
-                          width={40}
-                          height={40}
-                        />{" "}
-                        <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[72px] mr-[101.5px]">
-                          2
-                        </span>{" "}
-                      </div>
-                    </div>
-                    <div className="flex h-10 px-4 py-1.5 justify-center items-center gap-2.5 rounded-full w-[100px] ml-[70px] mt-[20px] bg-gray-100">
-                      <span className="text-[#101010] text-right font-semibold text-[14px] leading-[20px] custom-font">
-                        مرحله اول
-                      </span>
-                    </div>
-                    <div className="text-[#101010] text-right font-normal text-[12px] leading-[20px] custom-font mt-[10px]">
-                      احراز هویت در اپلیکیشن تارا 
-                    </div>
-                    <div className="flex mt-[160px] cursor-pointer w-[180px] h-[40px] p-[12px] justify-center items-center gap-[6px] rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] ">
+                <div className="  flex  ">
+                  {!ModalPay2 && (
+                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">  
                       {" "}
-                      <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
-                        مرحله بعد
-                      </span>
+                      <Image
+                        src={imagePay}
+                        alt="Image"
+                        width={250}
+                        height={480}
+                      />
                     </div>
+                  )}
+
+                  {ModalPay2 && (
+                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">
+                      {" "}
+                      <Image
+                        src={iamgePay2}
+                        alt="Image"
+                        width={250}
+                        height={480}
+                      />
+                    </div>
+                  )}
+
+                  <div className=" w-[300px] mt-[-70px]">
+                    {!ModalPay2 && (
+                      <div className="flex items-center self-stretch ml-[35px] ">
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG2}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-white text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[55px] mr-[23px]">
+                            1
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{ background: "#EDEDED" }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG2}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[55px] mr-[248px]">
+                            3
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{
+                            background:
+                              "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
+                          }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[55px] mr-[137px]">
+                            2
+                          </span>{" "}
+                        </div>
+                      </div>
+                    )}
+
+                    {ModalPay2 && (
+                      <div className="flex  items-center self-stretch ml-[35px]">
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-950text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[60px] mr-[132px]">
+                            <Image
+                              src={imageCheckMark}
+                              alt="Image"
+                              width={12}
+                              height={12}
+                            />
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{
+                            background:
+                              "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
+                          }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className=" text-white absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[55px] mr-[248px]">
+                            3
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{
+                            background:
+                              "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
+                          }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[60px] mr-[19px]">
+                            <Image
+                              src={imageCheckMark}
+                              alt="Image"
+                              width={12}
+                              height={12}
+                            />
+                          </span>{" "}
+                        </div>
+                      </div>
+                    )}
+
+                    {!ModalPay2 && (
+                      <div className="flex h-10 px-4 py-1.5 justify-center items-center gap-2.5 rounded-full w-[100px] ml-[190px] mt-[30px] bg-gray-100">
+                        <span className="text-[#101010] text-right font-semibold text-[14px] leading-[20px] custom-font">
+                          مرحله اول
+                        </span>
+                      </div>
+                    )}
+
+                    {ModalPay2 && (
+                      <div className="flex justify-end items-start gap-3">
+                        <div className="flex h-10 px-4 py-1.5 justify-center items-center gap-2.5 rounded-full w-[100px] ml-[70px] mt-[20px] bg-gray-100">
+                          <span className="text-[#101010] text-right font-semibold text-[14px] leading-[20px] custom-font">
+                            مرحله دوم
+                          </span>
+                        </div>
+                        <div
+                          className="flex p-2 justify-center items-center mt-[21px] cursor-pointer gap-2.5 rounded-[30px] bg-[#F5F5F7]"
+                          onClick={handleClick5}
+                        >
+                          <Image
+                            src={imageFlashBack}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {!ModalPay2 && (
+                      <div className="text-[#101010] text-right font-normal text-[12px] leading-[20px] custom-font mt-[10px]">
+                        احراز هویت در اپلیکیشن تارا 
+                      </div>
+                    )}
+                    {ModalPay2 && (
+                      <div className="text-[#101010] text-right font-normal text-[12px] leading-[20px] custom-font mt-[10px]">
+                        پرداخت با کارت اعتباری سبز رنگ بانی مد
+                      </div>
+                    )}
+
+                    {!ModalPay2 && (
+                      <div
+                        className="flex w-[250px] h-[48px] py-3 justify-center cursor-pointer items-center mt-[330px] ml-[30px] gap-1.5 flex-shrink-0 rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] "
+                        onClick={handleClick4}
+                      >
+                        {" "}
+                        <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
+                          مرحله بعد
+                        </span>
+                      </div>
+                    )}
+
+                    {ModalPay2 && (
+                      <div>
+                        <div
+                          className="flex w-[250px] h-[48px] cursor-pointer py-3 justify-center items-center mt-[280px] ml-[30px] gap-1.5 flex-shrink-0 rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] "
+                          onClick={handleClick4}
+                        >
+                          {" "}
+                          <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
+                            مرحله بعد
+                          </span>
+                        </div>
+                        <div className="flex w-[250px] h-[48px]  ml-[30px] py-3 cursor-pointer justify-center items-center gap-1.5 flex-shrink-0 rounded-[12px]  bg-[#F0F0F0] mt-[15px]">
+                          <span className="text-[#101010] text-center font-[Yekan Bakh FaNum] text-base font-semibold leading-5">
+                            نصب اپلیکیشن تارا
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -646,6 +796,7 @@ function BeforLogin() {
                   />
                 )}
               </div>
+
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   AccordionOpen

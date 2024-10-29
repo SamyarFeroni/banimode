@@ -38,6 +38,7 @@ function BeforLogin() {
   const [showNewComponent2, setShowNewComponent2] = useState(false);
   const [ModalPay, setModalPay] = useState(false);
   const [ModalPay2, setModalPay2] = useState(false);
+  const [ModalpayF, setModalpayF] = useState(false);
   const inputRefs = useRef<(HTMLInputElement | null)[]>(Array(5).fill(null));
 
   // HandClick for Buttons
@@ -56,6 +57,14 @@ function BeforLogin() {
 
   const handleClick5 = () => {
     setModalPay2(false);
+  };
+  const handleClick5Back = () => {
+    se;
+  };
+
+  const handleClick6 = () => {
+    setModalpayF(true);
+    setModalPay(false);
   };
   //For input number user can only input 11 PhoneNumber
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,6 +108,7 @@ function BeforLogin() {
 
   //For all Modals sttings
   const toggleModal = () => {
+    setModalpayF(false);
     setModalPay(false);
     setModal(!modal);
     setPhoneNumber("");
@@ -737,16 +747,250 @@ function BeforLogin() {
                       <div>
                         <div
                           className="flex w-[250px] h-[48px] cursor-pointer py-3 justify-center items-center mt-[280px] ml-[30px] gap-1.5 flex-shrink-0 rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] "
-                          onClick={handleClick4}
+                          onClick={handleClick6}
                         >
                           {" "}
                           <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
-                            مرحله بعد
+                            خرید از بانی مد
                           </span>
                         </div>
                         <div className="flex w-[250px] h-[48px]  ml-[30px] py-3 cursor-pointer justify-center items-center gap-1.5 flex-shrink-0 rounded-[12px]  bg-[#F0F0F0] mt-[15px]">
                           <span className="text-[#101010] text-center font-[Yekan Bakh FaNum] text-base font-semibold leading-5">
                             نصب اپلیکیشن تارا
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {ModalpayF && (
+            <div
+              className={Styles.modal}
+              style={{ backgroundColor: "rgba(59, 59, 59, 0.65)" }}
+            >
+              <div
+                className={Styles.overlay}
+                onClick={toggleModal}
+                style={{ height: "100px" }}
+              ></div>
+              <div
+                className={Styles.modalContent}
+                style={{ width: "572px", height: "585px" }}
+              >
+                <div className="flex justify-between items-center w-full p-4">
+                  <div className="flex-1 ml-[-30px] mt-[-30px]">
+                    <Image
+                      src={image4}
+                      alt="Close"
+                      width={30}
+                      height={30}
+                      onClick={toggleModal}
+                      className="cursor-pointer"
+                    />
+                  </div>
+                  <div className="flex-1 text-right mr-[-20px] mt-[-30px] relative">
+                    {" "}
+                    <span className="text-right text-[#101010] font-semibold text-[16px] leading-[20px] font-[Yekan Bakh FaNum]">
+                      {" "}
+                      شرایط گرفتن اعتبار
+                    </span>
+                  </div>
+                </div>
+
+                <div className="  flex  ">
+                  {!ModalPay2 && (
+                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">
+                      {" "}
+                      <Image
+                        src={imagePay}
+                        alt="Image"
+                        width={250}
+                        height={480}
+                      />
+                    </div>
+                  )}
+
+                  {ModalPay2 && (
+                    <div className="  w-[250px] ml-[-10px] mt-[-70px]">
+                      <div className="border border-gray-200 rounded-lg w-full">
+                        <div className="flex flex-col">
+                          <div className="flex justify-between p-3 border-b border-gray-200">
+                            <div className="flex-1 text-center">
+                              مبلغ اعتبار تخصیصی
+                            </div>
+                            <div className="flex-1 text-center">
+                              مبلغ خرید از بانی مد
+                            </div>
+                          </div>
+                          <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                            <div className="flex-1 text-center" dir="rtl">
+                              تعلق نمی‌گیرد.
+                            </div>
+                            <div className="flex-1 text-center">
+                              تا 2 میلیون
+                            </div>
+                          </div>
+                          <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                            <div className="flex-1 text-center">2 میلیون</div>
+                            <div className="flex-1 text-center">
+                              بیش از 2 میلیون
+                            </div>
+                          </div>
+                          <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                            <div className="flex-1 text-center">5 میلیون</div>
+                            <div className="flex-1 text-center">
+                              بیش از 5 میلیون
+                            </div>
+                          </div>
+                          <div className="flex justify-between p-3 border-b border-gray-200 bg-gray-200 bg-opacity-60 ">
+                            <div className="flex-1 text-center">10 میلیون</div>
+                            <div className="flex-1 text-center">
+                              بیش از 10 میلیون
+                            </div>
+                          </div>
+                          <div className="flex justify-between p-3 bg-gray-200 bg-opacity-60 ">
+                            <div className="flex-1 text-center">15 میلیون</div>
+                            <div className="flex-1 text-center">
+                              بیش از 15 میلیون
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className=" w-[300px] mt-[-70px]">
+                    {ModalPay2 && (
+                      <div className="flex  items-center self-stretch ml-[35px]">
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-950text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[60px] mr-[132px]">
+                            <Image
+                              src={imageCheckMark}
+                              alt="Image"
+                              width={12}
+                              height={12}
+                            />
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{
+                            background:
+                              "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
+                          }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className=" text-white absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[60px] mr-[245px]">
+                            <Image
+                              src={imageCheckMark}
+                              alt="Image"
+                              width={12}
+                              height={12}
+                            />
+                          </span>
+                        </div>
+                        <div
+                          className="w-[89px] h-[2px]"
+                          style={{
+                            background:
+                              "linear-gradient(268deg, #19B16A 0%, #2B8C51 100%)",
+                          }}
+                        ></div>
+                        <div>
+                          {" "}
+                          <Image
+                            src={imageOcheckG}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />{" "}
+                          <span className="absolute right-[10px] top-[2px] text-gray-600 text-right font-[450] text-[12px] leading-[20px] font-[Yekan Bakh VF] mt-[60px] mr-[19px]">
+                            <Image
+                              src={imageCheckMark}
+                              alt="Image"
+                              width={12}
+                              height={12}
+                            />
+                          </span>{" "}
+                        </div>
+                      </div>
+                    )}
+
+                    {ModalPay2 && (
+                      <div className="flex justify-end items-start gap-3">
+                        <div className="flex h-10 px-4 py-1.5 justify-center items-center gap-2.5 rounded-[30px] bg-[#F5F5F7] mt-[20px]">
+                          <span className="text-[#101010] text-right font-semibold text-[14px] leading-[20px] custom-font flex">
+                            شرایط گرفتن اعتبار
+                          </span>
+                        </div>
+                        <div
+                          className="flex p-2 justify-center items-center mt-[21px] cursor-pointer gap-2.5 rounded-[30px] bg-[#F5F5F7]"
+                          onClick={handleClick5}
+                        >
+                          <Image
+                            src={imageFlashBack}
+                            alt="Image"
+                            width={24}
+                            height={24}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {!ModalPay2 && (
+                      <div className="text-[#101010] text-right font-normal text-[12px] leading-[20px] custom-font mt-[10px]">
+                        احراز هویت در اپلیکیشن تارا 
+                      </div>
+                    )}
+                    {ModalPay2 && (
+                      <div
+                        className="text-[#101010] text-right font-normal text-[12px] leading-[20px] custom-font mt-[10px]"
+                        dir="rtl"
+                      >
+                        در جدول روبرو می‌تونید ببینید با هر مبلغ خرید، چقدر
+                        اعتبار بهتون تعلق می‌گیره. 
+                      </div>
+                    )}
+
+                    {!ModalPay2 && (
+                      <div
+                        className="flex w-[250px] h-[48px] py-3 justify-center cursor-pointer items-center mt-[330px] ml-[30px] gap-1.5 flex-shrink-0 rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] "
+                        onClick={handleClick4}
+                      >
+                        {" "}
+                        <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
+                          مرحله بعد
+                        </span>
+                      </div>
+                    )}
+
+                    {ModalPay2 && (
+                      <div>
+                        <div
+                          className="flex w-[250px] h-[48px] cursor-pointer py-3 justify-center items-center mt-[320px] ml-[-98px] gap-1.5 flex-shrink-0 rounded-[12px] bg-[linear-gradient(268deg,#19B16A_0%,#2B8C51_100%)] "
+                          onClick={handleClick6}
+                        >
+                          {" "}
+                          <span className="text-white text-center font-semibold text-[16px] leading-[20px]">
+                            خرید از بانی‌مد
                           </span>
                         </div>
                       </div>

@@ -308,7 +308,6 @@ function BeforLogin() {
                         type="text"
                         maxLength={1}
                         className="w-16 h-12 rounded-lg border border-gray-300 bg-white text-center text-2xl"
-                        ref={(el) => (inputRefs.current[index] = el)} // Set the ref for each input
                         onChange={(e) => handleChangeOTP(e, index)} // Handle input change
                       />
                     ))}

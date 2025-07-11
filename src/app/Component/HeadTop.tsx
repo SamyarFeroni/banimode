@@ -22,7 +22,7 @@ const HeadTop = () => {
           dir="rtl"
         >
           <h1>نرفــــــــــته برمــــــــــی‌گرده!</h1>
-          <div>make by samyar feroi</div>
+          <div>make by samyar feroni</div>
         </div>
 
         <div className="text-white text-center font-normal text-[16px] p-4">
